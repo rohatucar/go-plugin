@@ -20,7 +20,7 @@ import (
 
 	"github.com/golang/protobuf/ptypes/empty"
 	"github.com/hashicorp/go-hclog"
-	grpctest "github.com/hashicorp/go-plugin/test/grpc"
+	grpctest "github.com/rohatucar/go-plugin/test/grpc"
 	"google.golang.org/grpc"
 )
 

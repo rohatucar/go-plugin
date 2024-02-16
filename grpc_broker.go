@@ -14,9 +14,9 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/hashicorp/go-plugin/internal/grpcmux"
-	"github.com/hashicorp/go-plugin/internal/plugin"
-	"github.com/hashicorp/go-plugin/runner"
+	"github.com/rohatucar/go-plugin/internal/grpcmux"
+	"github.com/rohatucar/go-plugin/internal/plugin"
+	"github.com/rohatucar/go-plugin/runner"
 
 	"github.com/oklog/run"
 	"google.golang.org/grpc"
@@ -383,6 +383,11 @@ func (b *GRPCBroker) AcceptAndServe(id uint32, newGRPCServer func([]grpc.ServerO
 		return
 	}
 	defer ln.Close()
+	// Block until we are done
+	b.Serve(ln, newGRPCServer)
+
+}
+func (b *GRPCBroker) Serve(ln net.Listener, newGRPCServer func([]grpc.ServerOption) *grpc.Server) {
 
 	var opts []grpc.ServerOption
 	if b.tls != nil {

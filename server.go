@@ -15,13 +15,12 @@ import (
 	"os"
 	"os/signal"
 	"os/user"
-	"runtime"
 	"sort"
 	"strconv"
 	"strings"
 
 	hclog "github.com/hashicorp/go-hclog"
-	"github.com/hashicorp/go-plugin/internal/grpcmux"
+	"github.com/rohatucar/go-plugin/internal/grpcmux"
 	"google.golang.org/grpc"
 )
 
@@ -526,11 +525,7 @@ func Serve(opts *ServeConfig) {
 }
 
 func serverListener(unixSocketCfg UnixSocketConfig) (net.Listener, error) {
-	if runtime.GOOS == "windows" {
-		return serverListener_tcp()
-	}
-
-	return serverListener_unix(unixSocketCfg)
+	return serverListener_tcp()
 }
 
 func serverListener_tcp() (net.Listener, error) {

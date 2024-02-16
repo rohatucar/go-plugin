@@ -17,8 +17,8 @@ import (
 	"testing"
 
 	"github.com/hashicorp/go-hclog"
-	"github.com/hashicorp/go-plugin/internal/cmdrunner"
-	"github.com/hashicorp/go-plugin/runner"
+	"github.com/rohatucar/go-plugin/internal/cmdrunner"
+	"github.com/rohatucar/go-plugin/runner"
 )
 
 func TestSetGroup(t *testing.T) {

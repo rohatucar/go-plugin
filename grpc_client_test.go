@@ -8,8 +8,8 @@ import (
 	"reflect"
 	"testing"
 
-	grpctest "github.com/hashicorp/go-plugin/test/grpc"
 	"github.com/jhump/protoreflect/grpcreflect"
+	grpctest "github.com/rohatucar/go-plugin/test/grpc"
 	"google.golang.org/grpc"
 	reflectpb "google.golang.org/grpc/reflection/grpc_reflection_v1alpha"
 )
